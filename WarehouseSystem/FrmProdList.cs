@@ -26,6 +26,7 @@ namespace WarehouseSystem
         private void RefreshData()
         {
             dgData.DataSource = repo.GetProductData();
+            //test
         }
     }
 }
