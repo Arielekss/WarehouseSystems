@@ -48,7 +48,7 @@
             this.ClientSize = new System.Drawing.Size(544, 255);
             this.Controls.Add(this.dgData);
             this.Name = "FrmProdList";
-            this.Text = "FrmProdList";
+            this.Text = "7";
             ((System.ComponentModel.ISupportInitialize)(this.dgData)).EndInit();
             this.ResumeLayout(false);
 

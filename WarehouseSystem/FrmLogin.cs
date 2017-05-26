@@ -60,5 +60,11 @@ namespace WarehouseSystem
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            using (FrmCreateAccount frm = new FrmCreateAccount())
+                frm.ShowDialog(this);
+        }
     }
 }
