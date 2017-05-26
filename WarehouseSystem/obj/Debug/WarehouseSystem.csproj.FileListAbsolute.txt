@@ -18,3 +18,4 @@ C:\Users\Ariel\Documents\Visual Studio 2015\Projects\Samochod\WarehouseSystem\Wa
 C:\Users\Ariel\Documents\Visual Studio 2015\Projects\Samochod\WarehouseSystem\WarehouseSystem\obj\Debug\WarehouseSystem.pdb
 C:\Users\Ariel\Documents\Visual Studio 2015\Projects\Samochod\WarehouseSystem\WarehouseSystem\obj\Debug\WarehouseSystem.FrmProdList.resources
 C:\Users\Ariel\Documents\Visual Studio 2015\Projects\Samochod\WarehouseSystem\WarehouseSystem\obj\Debug\WarehouseSystem.FrmLogin.resources
+C:\Users\Ariel\Documents\Visual Studio 2015\Projects\Samochod\WarehouseSystem\WarehouseSystem\obj\Debug\WarehouseSystem.FrmCreateAccount.resources

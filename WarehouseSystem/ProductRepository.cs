@@ -41,5 +41,18 @@ namespace WarehouseSystem
             connection.Close();
             return ds.Tables[0].DefaultView;
         }
+
+        public void AddUser(Users user)
+        {
+            connection.Open();
+            if (connection.State == ConnectionState.Open)
+            {
+                sqlCommand = string.Format("Insert into user (username, password) VALUES ('{0}', '{1}');", user.Username, user.Password);
+                command = new SQLiteCommand(sqlCommand, connection);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Account created!");
+            }
+            connection.Close();
+        }
     }
 }
