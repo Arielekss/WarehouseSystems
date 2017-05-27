@@ -13,8 +13,8 @@ namespace WarehouseSystem
     public partial class FrmShippingList : Form
     {
         Shipping ship = new Shipping();
-        Product prod = new Product();
         List<Product> ProdList = new List<Product>();
+        List<Shipping> ShipList = new List<Shipping>();
         public FrmShippingList()
         {
             InitializeComponent();
@@ -23,15 +23,25 @@ namespace WarehouseSystem
         public FrmShippingList(List<Product> prodList)
         {
             InitializeComponent();
-            prod = product;
+            ProdList = prodList;
         }
 
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            ship.ProductName = prod.ProductName;
-            ship.Quantity = prod.Quantity;
-            ship.Price = (decimal)ship.Quantity * prod.Price;
+            foreach(Product prod in ProdList)
+            {
+                ship.ProductName = prod.ProductName;
+                ship.Quantity = prod.Quantity;
+                ship.Price = (decimal)ship.Quantity * prod.Price;
+                ShipList.Add(ship);
+            }
+            RefreshData();
+        }
+
+        private void RefreshData()
+        {
+            dgData.DataSource = ShipList;
         }
     }
 }

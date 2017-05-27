@@ -42,6 +42,7 @@ namespace WarehouseSystem
             Product product = GetSelectedRow();
             foreach(Product prod in prodList)
             {
+                
                 prodList.Add(prod);
             }
 
