@@ -13,6 +13,8 @@ namespace WarehouseSystem
     public partial class FrmProdList : Form
     {
         ProductRepository repo = new ProductRepository();
+        List<Product> prodList = new List<Product>();
+
         public FrmProdList()
         {
             InitializeComponent();
@@ -26,6 +28,32 @@ namespace WarehouseSystem
         private void RefreshData()
         {
             dgData.DataSource = repo.GetProductData();
+        }
+
+        private Product GetSelectedRow()
+        {
+            if (dgData.SelectedRows.Count == 0)
+                return null;
+            return dgData.SelectedRows[0].DataBoundItem as Product;
+        }
+
+        private void btnSendToShip_Click(object sender, EventArgs e)
+        {
+            Product product = GetSelectedRow();
+            foreach(Product prod in prodList)
+            {
+                prodList.Add(prod);
+            }
+
+            if (product == null)
+            {
+                MessageBox.Show(this, "Product is not choice");
+                return;
+            }
+            using (FrmShippingList frm = new FrmShippingList(prodList))
+            {
+                frm.ShowDialog(this);
+            }
         }
     }
 }

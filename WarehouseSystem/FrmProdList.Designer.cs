@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.dgData = new System.Windows.Forms.DataGridView();
+            this.btnSendToShip = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,17 +40,43 @@
             this.dgData.Location = new System.Drawing.Point(12, 32);
             this.dgData.Name = "dgData";
             this.dgData.RowTemplate.Height = 24;
+            this.dgData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgData.Size = new System.Drawing.Size(520, 150);
             this.dgData.TabIndex = 0;
+            // 
+            // btnSendToShip
+            // 
+            this.btnSendToShip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSendToShip.Location = new System.Drawing.Point(351, 220);
+            this.btnSendToShip.Name = "btnSendToShip";
+            this.btnSendToShip.Size = new System.Drawing.Size(100, 23);
+            this.btnSendToShip.TabIndex = 1;
+            this.btnSendToShip.Text = "Send to ship";
+            this.btnSendToShip.UseVisualStyleBackColor = true;
+            this.btnSendToShip.Click += new System.EventHandler(this.btnSendToShip_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(457, 220);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 2;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // FrmProdList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(544, 255);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSendToShip);
             this.Controls.Add(this.dgData);
             this.Name = "FrmProdList";
-            this.Text = "7";
+            this.Text = "Product List";
             ((System.ComponentModel.ISupportInitialize)(this.dgData)).EndInit();
             this.ResumeLayout(false);
 
@@ -57,5 +85,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgData;
+        private System.Windows.Forms.Button btnSendToShip;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
