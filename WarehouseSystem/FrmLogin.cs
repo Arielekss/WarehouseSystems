@@ -15,9 +15,19 @@ namespace WarehouseSystem
     public partial class FrmLogin : Form
     {
         Product product = new Product();
+        Users user = new Users();
         public FrmLogin()
         {
             InitializeComponent();
+        }
+
+        private void CopyValueFromControls()
+        {
+            if (txtLogin != null)
+                user.Username = txtLogin.Text;
+
+            if (txtPassword != null)
+                user.Password = txtLogin.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,8 +44,9 @@ namespace WarehouseSystem
 
             try
             {
+                CopyValueFromControls();
                 connection.Open();
-                sqlCommand = string.Format("select * from user where username='{0}' and password='{1}';", txtLogin.Text, txtPassword.Text);
+                sqlCommand = string.Format("select * from user where username='{0}' and password='{1}';", user.Username, user.Password);
                 command = new SQLiteCommand(sqlCommand, connection);
                 SQLiteDataAdapter adapt = new SQLiteDataAdapter(command);
                 DataSet ds = new DataSet();
@@ -47,7 +58,7 @@ namespace WarehouseSystem
                 {
                     MessageBox.Show("Login Successful!");
                     this.Hide();
-                    using (FrmMain frm = new FrmMain())
+                    using (FrmMain frm = new FrmMain(user))
                         frm.ShowDialog(this);
                 }
                 else
@@ -66,5 +77,6 @@ namespace WarehouseSystem
             using (FrmCreateAccount frm = new FrmCreateAccount())
                 frm.ShowDialog(this);
         }
+
     }
 }

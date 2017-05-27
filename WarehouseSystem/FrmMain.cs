@@ -18,6 +18,11 @@ namespace WarehouseSystem
             InitializeComponent();
         }
 
+        public FrmMain(Users user)
+        {
+            InitializeComponent();
+            txtLoginView.Text = user.Username;
+        }
         private void btnAddProd_Click(object sender, EventArgs e)
         {
             using (FrmAddProd frm = new FrmAddProd())
