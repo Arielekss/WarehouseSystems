@@ -30,16 +30,23 @@ namespace WarehouseSystem
             dgData.DataSource = repo.GetProductData();
         }
 
-        private Product GetSelectedRow()
-        {
-            if (dgData.SelectedRows.Count == 0)
-                return null;
-            return dgData.SelectedRows[0].DataBoundItem as Product;
-        }
+        
 
+
+        /*  private List<NegativeMagazine> GetSelectedRows()
+        {
+            List<NegativeMagazine> selectedRows = magList.Where(x => x.IsChecked && IsNegativeMagazineToCorrection(x)).ToList();
+            if (!selectedRows.Any())
+            {
+                Utils.ShowInfo(this, Strings.TxtBrakZaznaczonychPozycji);
+            }
+            return selectedRows;
+        }
+          
+      }*/
         private void btnSendToShip_Click(object sender, EventArgs e)
         {
-            Product product = GetSelectedRow();
+            /*
             foreach(Product prod in prodList)
             {
                 
@@ -54,7 +61,7 @@ namespace WarehouseSystem
             using (FrmShippingList frm = new FrmShippingList(prodList))
             {
                 frm.ShowDialog(this);
-            }
+            }*/
         }
     }
 }
