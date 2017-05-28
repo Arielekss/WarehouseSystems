@@ -48,7 +48,8 @@ namespace WarehouseSystem
                     Id = Convert.ToInt32(dr["Id"]),
                     ProductName = Convert.ToString(dr["ProductName"]),
                     Price = Convert.ToDecimal(dr["Price"]),
-                    Quantity = Convert.ToInt32(dr["Quantity"])
+                    Quantity = Convert.ToInt32(dr["Quantity"]),
+                    IsChecked = false
                 });
             }
             return prodList;

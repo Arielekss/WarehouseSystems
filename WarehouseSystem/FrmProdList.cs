@@ -29,46 +29,44 @@ namespace WarehouseSystem
         private void RefreshData()
         {
             dgData.DataSource = repo.GetProductList();
+            
+           
+        }
+
+        private Product GetFocused()
+        {
+            return dgData.SelectedRows[0].DataBoundItem as Product;
+
         }
 
         private List<Product> GetSelectedRows()
         {
-            List<Product> selectedRows = prodList.Where(x => x.IsChecked).ToList();
-                if (!selectedRows.Any())
-                MessageBox.Show("Please, choice product from list");
-            return selectedRows;
-        }
-
-
-        /*  private List<NegativeMagazine> GetSelectedRows()
-        {
-            List<NegativeMagazine> selectedRows = magList.Where(x => x.IsChecked && IsNegativeMagazineToCorrection(x)).ToList();
-            if (!selectedRows.Any())
+            List<Product> selectedRows = new List<Product>(); //prodList.Where(x => x.IsChecked && ).ToList();
+            foreach (Product prod in prodList)
             {
-                Utils.ShowInfo(this, Strings.TxtBrakZaznaczonychPozycji);
+                Product prodSelected = GetFocused();
+                if(prod.Id == prodSelected.Id)
+                selectedRows.Add(prod);
             }
+                if (!selectedRows.Any())
+                    MessageBox.Show("Please, choice product from list");
+
             return selectedRows;
         }
-          
-      }*/
+
+
         private void btnSendToShip_Click(object sender, EventArgs e)
         {
-            /*
-            foreach(Product prod in prodList)
-            {
-                
-                prodList.Add(prod);
-            }
-
-            if (product == null)
+            List<Product> prodToShipList = GetSelectedRows();
+            if (!prodToShipList.Any())
             {
                 MessageBox.Show(this, "Product is not choice");
                 return;
             }
-            using (FrmShippingList frm = new FrmShippingList(prodList))
+            using (FrmShippingList frm = new FrmShippingList(prodToShipList))
             {
                 frm.ShowDialog(this);
-            }*/
+            }
         }
     }
 }
