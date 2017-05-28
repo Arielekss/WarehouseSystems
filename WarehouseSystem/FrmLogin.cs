@@ -78,5 +78,9 @@ namespace WarehouseSystem
                 frm.ShowDialog(this);
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -20,3 +20,4 @@ C:\Users\Ariel\Documents\Visual Studio 2015\Projects\Samochod\WarehouseSystem\Wa
 C:\Users\Ariel\Documents\Visual Studio 2015\Projects\Samochod\WarehouseSystem\WarehouseSystem\obj\Debug\WarehouseSystem.FrmLogin.resources
 C:\Users\Ariel\Documents\Visual Studio 2015\Projects\Samochod\WarehouseSystem\WarehouseSystem\obj\Debug\WarehouseSystem.FrmCreateAccount.resources
 C:\Users\Ariel\Documents\Visual Studio 2015\Projects\Samochod\WarehouseSystem\WarehouseSystem\obj\Debug\WarehouseSystem.FrmShippingList.resources
+C:\Users\Ariel\Documents\Visual Studio 2015\Projects\Samochod\WarehouseSystem\WarehouseSystem\obj\Debug\WarehouseSystem.Form1.resources
