@@ -12,6 +12,7 @@ namespace WarehouseSystem
 {
     public class ProductRepository
     {
+        Product prod = new Product();
         SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0}", Path.Combine(Application.StartupPath, "WarehouseDB.sqlite")));
         SQLiteCommand command;
         string sqlCommand;
@@ -29,7 +30,7 @@ namespace WarehouseSystem
             connection.Close();
         }
 
-        public object GetProductData()
+        public List<Product> GetProductList()
         {
             connection.Open();
                 sqlCommand = string.Format("Select Id, ProductName, Price, Quantity from Product;");
@@ -39,9 +40,20 @@ namespace WarehouseSystem
                 var adapter = new SQLiteDataAdapter(sqlCommand, connection);
                 adapter.Fill(ds);
             connection.Close();
-            return ds.Tables[0].DefaultView;
+            List<Product> prodList = new List<Product>();
+            foreach(DataRow dr in ds.Tables[0].Rows)
+            {
+                prodList.Add(new Product
+                {
+                    Id = Convert.ToInt32(dr["Id"]),
+                    ProductName = Convert.ToString(dr["ProductName"]),
+                    Price = Convert.ToDecimal(dr["Price"]),
+                    Quantity = Convert.ToInt32(dr["Quantity"])
+                });
+            }
+            return prodList;
         }
-
+        
         public void AddUser(Users user)
         {
             connection.Open();

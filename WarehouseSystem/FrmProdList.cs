@@ -23,14 +23,21 @@ namespace WarehouseSystem
         {
             base.OnLoad(e);
             RefreshData();
+            prodList = repo.GetProductList();
         }
 
         private void RefreshData()
         {
-            dgData.DataSource = repo.GetProductData();
+            dgData.DataSource = repo.GetProductList();
         }
 
-        
+        private List<Product> GetSelectedRows()
+        {
+            List<Product> selectedRows = prodList.Where(x => x.IsChecked).ToList();
+                if (!selectedRows.Any())
+                MessageBox.Show("Please, choice product from list");
+            return selectedRows;
+        }
 
 
         /*  private List<NegativeMagazine> GetSelectedRows()
