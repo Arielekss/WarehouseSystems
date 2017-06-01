@@ -139,6 +139,17 @@
       <DependentUpon>FrmShippingList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\FrmAddProd.datasource" />
+    <None Include="Properties\DataSources\FrmCreateAccount.datasource" />
+    <None Include="Properties\DataSources\FrmLogin.datasource" />
+    <None Include="Properties\DataSources\FrmMain.datasource" />
+    <None Include="Properties\DataSources\FrmProdList.datasource" />
+    <None Include="Properties\DataSources\FrmShippingList.datasource" />
+    <None Include="Properties\DataSources\Product.datasource" />
+    <None Include="Properties\DataSources\ProductRepository.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\Shipping.datasource" />
+    <None Include="Properties\DataSources\Users.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

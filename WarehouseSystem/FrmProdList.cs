@@ -28,7 +28,7 @@ namespace WarehouseSystem
 
         private void RefreshData()
         {
-            dgData.DataSource = repo.GetProductList();
+           dgData.DataSource = repo.GetProductList();
             
            
         }
@@ -36,37 +36,24 @@ namespace WarehouseSystem
         private Product GetFocused()
         {
             return dgData.SelectedRows[0].DataBoundItem as Product;
-
         }
 
-        private List<Product> GetSelectedRows()
+        private Product GetSelectedRows()
         {
-            List<Product> selectedRows = new List<Product>(); //prodList.Where(x => x.IsChecked && ).ToList();
-            foreach (Product prod in prodList)
-            {
-                Product prodSelected = GetFocused();
-                if(prod.Id == prodSelected.Id)
-                selectedRows.Add(prod);
-            }
-                if (!selectedRows.Any())
-                    MessageBox.Show("Please, choice product from list");
-
-            return selectedRows;
+            if (dgData.SelectedRows.Count == 0)
+                return null;
+            return dgData.SelectedRows[0].DataBoundItem as Product;
+           
         }
 
-
+      
         private void btnSendToShip_Click(object sender, EventArgs e)
         {
-            List<Product> prodToShipList = GetSelectedRows();
-            if (!prodToShipList.Any())
-            {
-                MessageBox.Show(this, "Product is not choice");
-                return;
-            }
-            using (FrmShippingList frm = new FrmShippingList(prodToShipList))
+           
+            /*using (FrmShippingList frm = new FrmShippingList(prodToShipList))
             {
                 frm.ShowDialog(this);
-            }
+            }*/
         }
     }
 }
