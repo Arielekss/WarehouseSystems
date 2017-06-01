@@ -29,8 +29,6 @@ namespace WarehouseSystem
         private void RefreshData()
         {
            dgData.DataSource = repo.GetProductList();
-            
-           
         }
 
         private Product GetFocused()
@@ -43,13 +41,10 @@ namespace WarehouseSystem
             if (dgData.SelectedRows.Count == 0)
                 return null;
             return dgData.SelectedRows[0].DataBoundItem as Product;
-           
         }
-
-      
+        
         private void btnSendToShip_Click(object sender, EventArgs e)
         {
-           
             /*using (FrmShippingList frm = new FrmShippingList(prodToShipList))
             {
                 frm.ShowDialog(this);
