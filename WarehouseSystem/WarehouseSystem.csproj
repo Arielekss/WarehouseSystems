@@ -69,34 +69,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GUI\FrmAddProd.cs">
+    <Compile Include="FrmAddProd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FrmAddProd.Designer.cs">
+    <Compile Include="FrmAddProd.Designer.cs">
       <DependentUpon>FrmAddProd.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FrmCreateAccount.cs">
+    <Compile Include="FrmCreateAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FrmCreateAccount.Designer.cs">
+    <Compile Include="FrmCreateAccount.Designer.cs">
       <DependentUpon>FrmCreateAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FrmLogin.cs">
+    <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FrmLogin.Designer.cs">
+    <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FrmMain.cs">
+    <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FrmMain.Designer.cs">
+    <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FrmProdList.cs">
+    <Compile Include="FrmProdList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FrmProdList.Designer.cs">
+    <Compile Include="FrmProdList.Designer.cs">
       <DependentUpon>FrmProdList.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FrmSelectItem.cs">
@@ -110,26 +110,26 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shipping.cs" />
-    <Compile Include="GUI\FrmShippingList.cs">
+    <Compile Include="FrmShippingList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FrmShippingList.Designer.cs">
+    <Compile Include="FrmShippingList.Designer.cs">
       <DependentUpon>FrmShippingList.cs</DependentUpon>
     </Compile>
     <Compile Include="Users.cs" />
-    <EmbeddedResource Include="GUI\FrmAddProd.resx">
+    <EmbeddedResource Include="FrmAddProd.resx">
       <DependentUpon>FrmAddProd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FrmCreateAccount.resx">
+    <EmbeddedResource Include="FrmCreateAccount.resx">
       <DependentUpon>FrmCreateAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FrmLogin.resx">
+    <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FrmMain.resx">
+    <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FrmProdList.resx">
+    <EmbeddedResource Include="FrmProdList.resx">
       <DependentUpon>FrmProdList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmSelectItem.resx">
@@ -144,7 +144,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="GUI\FrmShippingList.resx">
+    <EmbeddedResource Include="FrmShippingList.resx">
       <DependentUpon>FrmShippingList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
