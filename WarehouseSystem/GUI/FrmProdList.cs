@@ -13,7 +13,7 @@ namespace WarehouseSystem
     public partial class FrmProdList : Form
     {
         ProductRepository repo = new ProductRepository();
-        List<Product> prodList = new List<Product>();
+        Product product = new Product();
 
         public FrmProdList()
         {
@@ -23,7 +23,6 @@ namespace WarehouseSystem
         {
             base.OnLoad(e);
             RefreshData();
-            prodList = repo.GetProductList();
         }
 
         private void RefreshData()
@@ -45,10 +44,11 @@ namespace WarehouseSystem
         
         private void btnSendToShip_Click(object sender, EventArgs e)
         {
-            /*using (FrmShippingList frm = new FrmShippingList(prodToShipList))
+            product = GetSelectedRows();
+            using (Frm)
             {
                 frm.ShowDialog(this);
-            }*/
+            }
         }
     }
 }
