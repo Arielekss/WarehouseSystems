@@ -45,9 +45,9 @@ namespace WarehouseSystem
         private void btnSendToShip_Click(object sender, EventArgs e)
         {
             product = GetSelectedRows();
-            using ( frm)
+            using (FrmSelectItem frm = new FrmSelectItem(product))
             {
-                frm.ShowDialog(this);
+                frm.ShowDialog(this); //TODO
             }
         }
     }
