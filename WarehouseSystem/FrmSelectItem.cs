@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 namespace WarehouseSystem
 {
@@ -52,5 +53,35 @@ namespace WarehouseSystem
             CalcCost(product);
             costLabel.Text = shiping.Cost.ToString();
         }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            if (DialogResult == DialogResult.OK)
+            {
+                try
+                {
+                    MailMessage mail = new MailMessage();
+                    SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                    mail.From = new MailAddress("csharptestowe@gmail.com");
+                    mail.To.Add("csharptestowe@gmail.com");
+                    mail.Subject = "Twoje zamówienie z WorkFlowShop";
+                    mail.Body = string.Format("Dziękujemy za zakup w naszym sklepie. Koszt Twojego koszyka to {0}", shiping.Cost);
+                    //csharptestowe@gmail.com 
+                    SmtpServer.Port = 587;
+                    SmtpServer.Credentials = new System.Net.NetworkCredential("csharptestowe@gmail.com", "x");
+                    SmtpServer.EnableSsl = true;
+
+                    SmtpServer.Send(mail);
+                    MessageBox.Show("mail Send");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
+        }
     }
-}
+
