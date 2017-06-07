@@ -14,11 +14,19 @@ namespace WarehouseSystem
     {
         ProductRepository repo = new ProductRepository();
         Product product = new Product();
+        List<Shipping> prodList = new List<Shipping>();
 
         public FrmProdList()
         {
             InitializeComponent();
         }
+
+        public FrmProdList(List<Shipping> list)
+        {
+            InitializeComponent();
+            this.prodList = list;
+        }
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -47,7 +55,7 @@ namespace WarehouseSystem
             product = GetSelectedRows();
             using (FrmSelectItem frm = new FrmSelectItem(product))
             {
-                frm.ShowDialog(this); //TODO
+                frm.ShowDialog(this);
             }
         }
     }

@@ -13,6 +13,7 @@ namespace WarehouseSystem
     public class ProductRepository
     {
         Product prod = new Product();
+        List<Shipping> shippingList = new List<Shipping>();
         SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0}", Path.Combine(Application.StartupPath, "WarehouseDB.sqlite")));
         SQLiteCommand command;
         string sqlCommand;
@@ -28,6 +29,26 @@ namespace WarehouseSystem
                 MessageBox.Show("Product Added");
             }
             connection.Close();
+        }
+
+        public void AddShipping(Shipping ship)
+        {
+            shippingList.Add(ship);
+            CreateShipping(shippingList);
+        }
+
+        public void CreateShipping(List<Shipping> shipList)
+        {
+            foreach(Shipping ship in shippingList)
+            {
+                connection.Open();
+                DateTime time = DateTime.Now;              
+                string format = "yyyy-MM-dd HH:mm:ss";    
+                               sqlCommand = string.Format("Insert into Shipping (ProdName, Cost, Date) VALUES ('{0}', {1},'" + time.ToString(format) + "');", ship.ProductName, ship.Cost);
+                command = new SQLiteCommand(sqlCommand, connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
         }
 
         public List<Product> GetProductList()

@@ -15,6 +15,8 @@ namespace WarehouseSystem
     {
         Product product = new Product();
         Shipping shiping = new Shipping();
+        List<Shipping> prodList = new List<Shipping>();
+        ProductRepository repo = new ProductRepository();
 
         public FrmSelectItem()
         {
@@ -41,7 +43,7 @@ namespace WarehouseSystem
             CalcCost(product);
             costLabel.Text = shiping.Cost.ToString();
         }
-        private decimal CalcCost (Product product)
+        private decimal CalcCost(Product product)
         {
             decimal selectedQuantity = numericUpProdSel.Value;
             shiping.Cost = selectedQuantity * product.Price;
@@ -59,29 +61,32 @@ namespace WarehouseSystem
             base.OnClosing(e);
             if (DialogResult == DialogResult.OK)
             {
-                try
-                {
-                    MailMessage mail = new MailMessage();
-                    SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+                repo.AddShipping(shiping);
+                
+                /* try
+                 {
+                     MailMessage mail = new MailMessage();
+                     SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
-                    mail.From = new MailAddress("csharptestowe@gmail.com");
-                    mail.To.Add("csharptestowe@gmail.com");
-                    mail.Subject = "Twoje zamówienie z WorkFlowShop";
-                    mail.Body = string.Format("Dziękujemy za zakup w naszym sklepie. Koszt Twojego koszyka to {0}", shiping.Cost);
-                    //csharptestowe@gmail.com 
-                    SmtpServer.Port = 587;
-                    SmtpServer.Credentials = new System.Net.NetworkCredential("csharptestowe@gmail.com", "x");
-                    SmtpServer.EnableSsl = true;
+                     mail.From = new MailAddress("csharptestowe@gmail.com");
+                     mail.To.Add("csharptestowe@gmail.com");
+                     mail.Subject = "Twoje zamówienie z WorkFlowShop";
+                     mail.Body = string.Format("Dziękujemy za zakup w naszym sklepie. Koszt Twojego koszyka to {0}", shiping.Cost);
+                     //csharptestowe@gmail.com 
+                     SmtpServer.Port = 587;
+                     SmtpServer.Credentials = new System.Net.NetworkCredential("csharptestowe@gmail.com", "x");
+                     SmtpServer.EnableSsl = true;
 
-                    SmtpServer.Send(mail);
-                    MessageBox.Show("mail Send");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
+                     SmtpServer.Send(mail);
+                     MessageBox.Show("mail Send");
+                 }
+                 catch (Exception ex)
+                 {
+                     MessageBox.Show(ex.ToString());
+                 }*/
             }
         }
-        }
     }
+}
+    
 

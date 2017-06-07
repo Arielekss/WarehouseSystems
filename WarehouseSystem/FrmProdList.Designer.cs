@@ -30,15 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgData = new System.Windows.Forms.DataGridView();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnSendToShip = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isCheckedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
@@ -52,24 +51,19 @@
             this.idDataGridViewTextBoxColumn,
             this.productNameDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn,
-            this.quantityDataGridViewTextBoxColumn,
-            this.isCheckedDataGridViewCheckBoxColumn});
+            this.quantityDataGridViewTextBoxColumn});
             this.dgData.DataSource = this.productBindingSource;
             this.dgData.Location = new System.Drawing.Point(12, 12);
             this.dgData.Name = "dgData";
             this.dgData.RowTemplate.Height = 24;
             this.dgData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgData.Size = new System.Drawing.Size(544, 150);
+            this.dgData.Size = new System.Drawing.Size(469, 150);
             this.dgData.TabIndex = 0;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(WarehouseSystem.Product);
             // 
             // btnSendToShip
             // 
             this.btnSendToShip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSendToShip.Location = new System.Drawing.Point(360, 220);
+            this.btnSendToShip.Location = new System.Drawing.Point(297, 178);
             this.btnSendToShip.Name = "btnSendToShip";
             this.btnSendToShip.Size = new System.Drawing.Size(100, 23);
             this.btnSendToShip.TabIndex = 1;
@@ -81,12 +75,16 @@
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(466, 220);
+            this.btnCancel.Location = new System.Drawing.Point(403, 178);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(WarehouseSystem.Product);
             // 
             // usersBindingSource
             // 
@@ -115,23 +113,18 @@
             // 
             // quantityDataGridViewTextBoxColumn
             // 
+            this.quantityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
             this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
             this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
             this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // isCheckedDataGridViewCheckBoxColumn
-            // 
-            this.isCheckedDataGridViewCheckBoxColumn.DataPropertyName = "IsChecked";
-            this.isCheckedDataGridViewCheckBoxColumn.HeaderText = "Check";
-            this.isCheckedDataGridViewCheckBoxColumn.Name = "isCheckedDataGridViewCheckBoxColumn";
             // 
             // FrmProdList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(553, 255);
+            this.ClientSize = new System.Drawing.Size(490, 213);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSendToShip);
             this.Controls.Add(this.dgData);
@@ -155,6 +148,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isCheckedDataGridViewCheckBoxColumn;
     }
 }
